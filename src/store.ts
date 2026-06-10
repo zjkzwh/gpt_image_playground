@@ -2000,7 +2000,6 @@ async function completeRecoveredFalTask(task: TaskRecord, result: Awaited<Return
 
   updateTaskInStore(task.id, {
     outputImages: outputIds,
-    outputErrors: undefined,
     transparentOriginalImages: transparentOriginalImageIds,
     actualParams: firstActualParams(actualParamsList),
     actualParamsByImage: mapActualParamsByImage(outputIds, actualParamsList),
@@ -3502,7 +3501,6 @@ async function executeAgentRound(
       updateTaskInStore(taskId, {
         prompt: image.revisedPrompt ?? latestTask?.prompt ?? '',
         outputImages: [imgId],
-        outputErrors: undefined,
         actualParams,
         actualParamsByImage: { [imgId]: actualParams },
         revisedPromptByImage: image.revisedPrompt ? { [imgId]: image.revisedPrompt } : undefined,
@@ -3817,7 +3815,6 @@ async function executeAgentRound(
           maskTargetImageId: round?.maskTargetImageId ?? null,
           maskImageId: round?.maskImageId ?? null,
           outputImages: [imgId],
-          outputErrors: undefined,
           actualParams,
           actualParamsByImage: { [imgId]: actualParams },
           revisedPromptByImage: image.revisedPrompt ? { [imgId]: image.revisedPrompt } : undefined,
@@ -4743,7 +4740,6 @@ async function completeRecoveredCustomTask(task: TaskRecord, result: Awaited<Ret
 
   updateTaskInStore(task.id, {
     outputImages: outputIds,
-    outputErrors: undefined,
     transparentOriginalImages: transparentOriginalImageIds,
     actualParams: firstActualParams(actualParamsList),
     actualParamsByImage: mapActualParamsByImage(outputIds, actualParamsList),
