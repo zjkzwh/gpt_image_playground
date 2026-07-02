@@ -2,8 +2,8 @@ name: Trigger Vercel Deploy Hook
 
 on:
   push:
-    tags:
-      - 'v*'
+    branches:
+      - main
 
 jobs:
   deploy:
